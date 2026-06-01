@@ -178,6 +178,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
+            <!-- Kolom Kiri: Galeri & Info Utama -->
             <div class="lg:col-span-2 space-y-8">
                 
                 <!-- Gambar Utama: 960x720 (Horizontal/Landscape) -> Rasio 4:3 -->
@@ -217,7 +218,6 @@
                     <h3 class="text-xl font-bold mb-4 text-slate-800 flex items-center"><i class="fas fa-camera mr-2 text-slate-400"></i> Galeri Ruangan (Klik untuk perbesar)</h3>
                     
                     <!-- Grid Galeri: 540x960 (Vertikal/Portrait) -> Rasio 9:16 -->
-                    <!-- Di layar kecil tampil 2 kolom, layar sedang 3 kolom -->
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         <div class="overflow-hidden aspect-[9/16] border border-gray-200 bg-gray-50 relative group cursor-pointer" onclick="openModal('dalam-rumah.jpg')">
                             <img src="dalam-rumah.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Ruang Tamu dan Ruang Tengah">
@@ -253,7 +253,7 @@
                         <i class="fas fa-info-circle text-slate-400 mt-1 mr-3 text-lg"></i>
                         <div>
                             <p class="text-sm text-slate-600">
-                                <strong class="text-slate-800">Pemberitahuan:</strong> <strong class="text-slate-800">Kasur dan karpet tidak termasuk</strong> dalam paket sewa.
+                                <strong class="text-slate-800">Pemberitahuan:</strong> Kasur dan karpet tidak termasuk dalam paket sewa.
                             </p>
                         </div>
                     </div>
@@ -261,31 +261,45 @@
 
             </div>
 
+            <!-- Kolom Kanan: Sidebar & CTA -->
             <div class="space-y-6">
                 
+                <!-- Fasilitas Termasuk (Baru) -->
                 <div class="bg-white p-6 shadow-sm border border-gray-200">
                     <h3 class="text-lg font-bold mb-4 text-slate-800 border-b border-gray-100 pb-2">Fasilitas Termasuk</h3>
                     <ul class="space-y-3 text-slate-600 text-sm">
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3"></i> 2 Unit AC Inverter Daikin</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3"></i> Kitchen Set Lengkap</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3"></i> Penghisap Asap Dapur</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3"></i> Gorden Jendela</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3"></i> 1 Lemari</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3"></i> Kompor Gas</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3"></i> TV 40 Inch</li>
+                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> 2 Unit AC Inverter Daikin</li>
+                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> Kitchen Set Lengkap</li>
+                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> Penghisap Asap Dapur</li>
+                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> Gorden Jendela</li>
+                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> 1 Lemari</li>
+                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> Kompor Gas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> TV 40 Inch</li>
                     </ul>
                 </div>
 
+                <!-- Fasilitas Komplek Menteng Indah (Baru ditambahkan) -->
+                <div class="bg-white p-6 shadow-sm border border-gray-200">
+                    <h3 class="text-lg font-bold mb-4 text-slate-800 border-b border-gray-100 pb-2">Fasilitas Perumahan</h3>
+                    <ul class="space-y-3 text-slate-600 text-sm leading-relaxed">
+                        <li class="flex items-start"><i class="fas fa-mosque text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>Mesjid</span></li>
+                        <li class="flex items-start"><i class="fas fa-table-tennis text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>Lapangan Tenis</span></li>
+                        <li class="flex items-start"><i class="fas fa-futbol text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>Lapangan Voli / Sepakbola</span></li>
+                        <li class="flex items-start"><i class="fas fa-shopping-basket text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>Diamond Mini Market & Al-Hidayah Mart <span class="block text-xs text-slate-400 mt-0.5">(Bisa delivery galon, gas & belanjaan)</span></span></li>
+                        <li class="flex items-start"><i class="fas fa-child text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>Taman Kanak-Kanak (TK)</span></li>
+                        <li class="flex items-start"><i class="fas fa-coffee text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>Cafe</span></li>
+                        <li class="flex items-start"><i class="fas fa-credit-card text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>ATM</span></li>
+                        <li class="flex items-start"><i class="fas fa-swimmer text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>Kolam Renang</span></li>
+                        <li class="flex items-start"><i class="fas fa-tree text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>Taman</span></li>
+                        <li class="flex items-start"><i class="fas fa-shield-alt text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>Pos Security 24 Jam</span></li>
+                        <li class="flex items-start"><i class="fas fa-leaf text-slate-500 mt-1 mr-3 w-4 text-center"></i> <span>Lingkungan Asri</span></li>
+                    </ul>
+                </div>
+
+                <!-- Akses Lokasi -->
                 <div class="bg-white p-6 shadow-sm border border-gray-200">
                     <h3 class="text-lg font-bold mb-4 text-slate-800 border-b border-gray-100 pb-2">Akses Lokasi</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <div class="bg-slate-100 p-2 text-slate-700 mr-3"><i class="fas fa-swimmer w-4 text-center"></i></div>
-                            <div>
-                                <p class="font-bold text-sm text-slate-800">Fasilitas Komplek</p>
-                                <p class="text-xs text-slate-500">Sangat dekat kolam renang komplek</p>
-                            </div>
-                        </li>
                         <li class="flex items-start">
                             <div class="bg-slate-100 p-2 text-slate-700 mr-3"><i class="fas fa-car w-4 text-center"></i></div>
                             <div>
@@ -307,6 +321,7 @@
                     </a>
                 </div>
 
+                <!-- CTA Sticky -->
                 <div class="bg-dark-grey p-6 shadow-md text-white text-center border-t-4 border-slate-500 sticky top-6">
                     <h3 class="text-xl font-bold mb-2">Tertarik Menyewa?</h3>
                     <p class="text-slate-300 text-sm mb-6">Hubungi Ibu Rahmi untuk survey lokasi atau pertanyaan lebih lanjut.</p>
@@ -359,29 +374,24 @@
             modalImg.src = imageSrc;
             modal.classList.remove('hidden');
             
-            // Jeda sejenak agar CSS display flex diaktifkan sebelum animasi opacity jalan
             setTimeout(() => {
                 modal.classList.add('modal-active');
             }, 10);
             
-            // Kunci scroll halaman belakang saat modal terbuka (UX Mobile sangat penting)
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             modal.classList.remove('modal-active');
             
-            // Tunggu animasi fade-out selesai sebelum benar-benar menyembunyikan div (0.3 detik = 300ms)
             setTimeout(() => {
                 modal.classList.add('hidden');
-                modalImg.src = ''; // Kosongkan src agar tidak ada bayangan gambar lama saat buka gambar lain
+                modalImg.src = '';
             }, 300);
             
-            // Kembalikan scroll halaman belakang
             document.body.style.overflow = 'auto';
         }
 
-        // Fitur aksesibilitas tambahan: Tutup pakai tombol "Escape" di keyboard laptop
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape" && modal.classList.contains('modal-active')) {
                 closeModal();
