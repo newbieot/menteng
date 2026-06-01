@@ -11,15 +11,15 @@
     <style>
         body { 
             font-family: 'Poppins', sans-serif; 
-            background-color: #f1f5f9; /* Latar belakang luar flyer */
+            background-color: #f1f5f9;
         }
         
-        /* Teknik Utama: Container Query agar teks proporsional mengikuti lebar */
+        /* Teknik Utama: Container Query & Strict Overflow */
         .flyer-container {
             container-type: inline-size;
             background-color: #ffffff;
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* Mencegah konten bocor keluar batas */
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             margin: 0 auto;
             border: 1px solid #e2e8f0;
@@ -30,26 +30,26 @@
         .flyer-portrait { aspect-ratio: 4 / 5; max-width: 450px; } /* 1080 x 1350 */
         .flyer-story { aspect-ratio: 9 / 16; max-width: 400px; } /* 1080 x 1920 */
 
-        /* Tipografi berbasis CQW (Container Query Width) - Anti Terpotong */
-        .f-title { font-size: 6.5cqw; font-weight: 800; line-height: 1.1; color: #1e293b; text-transform: uppercase; }
-        .f-price { font-size: 7.5cqw; font-weight: 800; color: #0f172a; }
-        .f-subtitle { font-size: 3.5cqw; font-weight: 700; color: #1e293b; }
-        .f-body { font-size: 2.5cqw; color: #475569; line-height: 1.4; }
-        .f-small { font-size: 2cqw; color: #64748b; }
-        .f-tiny { font-size: 1.7cqw; color: #94a3b8; }
+        /* Tipografi berbasis CQW (Container Query Width) - Diperkecil agar lebih muat */
+        .f-title { font-size: 5.5cqw; font-weight: 800; line-height: 1.1; color: #1e293b; text-transform: uppercase; }
+        .f-price { font-size: 6.5cqw; font-weight: 800; color: #0f172a; line-height: 1.1; }
+        .f-subtitle { font-size: 2.8cqw; font-weight: 700; color: #1e293b; }
+        .f-body { font-size: 2.2cqw; color: #475569; line-height: 1.3; }
+        .f-small { font-size: 1.8cqw; color: #64748b; leading-tight; }
+        .f-tiny { font-size: 1.5cqw; color: #94a3b8; }
 
-        .f-icon { font-size: 3.5cqw; color: #1e293b; }
-        .badge-muslim { background: #1e293b; color: white; padding: 1cqw 3cqw; border-radius: 0 0 2cqw 0; font-size: 2cqw; font-weight: 700; }
+        .f-icon { font-size: 3cqw; color: #1e293b; }
+        .badge-muslim { background: #1e293b; color: white; padding: 1cqw 2.5cqw; border-radius: 0 0 2cqw 0; font-size: 1.8cqw; font-weight: 700; }
         
         /* Desain QR Code */
-        .qr-box { background: white; padding: 1.5cqw; border-radius: 2cqw; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; }
-        .qr-img { width: 14cqw; height: 14cqw; object-fit: contain; }
+        .qr-box { background: white; padding: 1cqw; border-radius: 1.5cqw; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; aspect-ratio: 1/1; }
+        .qr-img { width: 100%; height: 100%; object-fit: contain; }
     </style>
 </head>
 <body class="py-10 px-4 flex flex-col items-center gap-16">
 
     <div class="text-center mb-4">
-        <h1 class="text-3xl font-bold text-slate-800">Preview Flyer Digital</h1>
+        <h1 class="text-3xl font-bold text-slate-800">Preview Flyer Digital (Revisi Anti-Potong)</h1>
         <p class="text-slate-500">Gunakan fitur screenshot di HP/Laptop untuk menyimpan flyer ini.</p>
     </div>
 
@@ -58,82 +58,82 @@
          Sempurna untuk Status WA / IG Story
     =========================================== -->
     <div class="w-full">
-        <h2 class="text-center font-bold text-slate-400 mb-2 tracking-widest uppercase">1. Orientasi Vertikal Penuh (Rasio 9:16)</h2>
+        <h2 class="text-center font-bold text-slate-400 mb-2 tracking-widest uppercase text-sm">1. Orientasi Vertikal Penuh (Rasio 9:16)</h2>
         
         <div class="flyer-container flyer-story rounded-2xl flex flex-col">
-            <!-- Header Image -->
+            <!-- Header Image: Fixed 28% Height -->
             <div class="h-[28%] w-full relative">
                 <img src="tampak-depan.jpg" alt="Menteng Indah" class="w-full h-full object-cover">
                 <div class="absolute top-0 left-0 badge-muslim">KHUSUS MUSLIM</div>
                 
-                <!-- QR Lokasi (Diletakkan di area atas gambar agar jauh dari QR WA di bawah) -->
-                <div class="absolute bottom-[3cqw] right-[3cqw] qr-box bg-white/95 backdrop-blur">
+                <!-- QR Lokasi -->
+                <div class="absolute bottom-[2cqw] right-[2cqw] qr-box bg-white/95 backdrop-blur w-[15cqw]">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/RVRCegt28uvAQkQq8" class="qr-img">
-                    <span class="f-tiny font-bold text-slate-800 mt-[0.5cqw]">Scan Lokasi</span>
+                    <span class="f-tiny font-bold text-slate-800 mt-[0.5cqw]">Lokasi</span>
                 </div>
             </div>
 
-            <!-- Main Content -->
-            <div class="flex-1 p-[5cqw] flex flex-col justify-between bg-white">
+            <!-- Main Content: Fixed 60% Height -->
+            <div class="h-[60%] w-full p-[4.5cqw] flex flex-col justify-between bg-white">
                 
                 <div>
-                    <h1 class="f-title">Rumah Minimalis<br>Menteng Indah</h1>
-                    <p class="f-body mt-[1cqw]"><i class="fas fa-map-marker-alt text-red-500 mr-[1cqw]"></i>Blok F2 No 29, Medan Denai</p>
-                    <div class="f-price mt-[2cqw]">Rp 35 Juta <span class="f-body font-normal">/ Tahun</span></div>
+                    <h1 class="f-title text-[6.5cqw]">Rumah Minimalis<br>Menteng Indah</h1>
+                    <p class="f-body mt-[1cqw] font-semibold"><i class="fas fa-map-marker-alt text-red-500 mr-[1cqw]"></i>Blok F2 No 29, Medan Denai</p>
+                    <div class="f-price mt-[1.5cqw]">Rp 35 Juta <span class="f-body font-normal">/ Tahun</span></div>
                 </div>
 
                 <!-- Grid Spesifikasi -->
-                <div class="flex gap-[2cqw] my-[3cqw]">
+                <div class="flex gap-[1.5cqw] my-[2cqw]">
                     <div class="flex-1 bg-slate-50 border border-slate-200 rounded-lg text-center p-[2cqw]">
-                        <i class="fas fa-expand f-icon mb-[1cqw]"></i>
+                        <i class="fas fa-expand f-icon mb-[0.5cqw]"></i>
                         <div class="f-small">L. Tanah</div>
                         <div class="f-body font-bold text-slate-800">150m²</div>
                     </div>
                     <div class="flex-1 bg-slate-50 border border-slate-200 rounded-lg text-center p-[2cqw]">
-                        <i class="fas fa-bed f-icon mb-[1cqw]"></i>
+                        <i class="fas fa-bed f-icon mb-[0.5cqw]"></i>
                         <div class="f-small">Kamar</div>
                         <div class="f-body font-bold text-slate-800">3 Ruang</div>
                     </div>
                     <div class="flex-1 bg-slate-50 border border-slate-200 rounded-lg text-center p-[2cqw]">
-                        <i class="fas fa-bath f-icon mb-[1cqw]"></i>
+                        <i class="fas fa-bath f-icon mb-[0.5cqw]"></i>
                         <div class="f-small">K. Mandi</div>
                         <div class="f-body font-bold text-slate-800">2 Ruang</div>
                     </div>
                 </div>
 
                 <!-- Fasilitas Rumah -->
-                <div class="mb-[3cqw]">
-                    <h3 class="f-subtitle border-b-2 border-slate-100 pb-[1cqw] mb-[2cqw]">Fasilitas Termasuk</h3>
-                    <div class="grid grid-cols-2 gap-y-[1.5cqw] f-body font-medium">
-                        <div><i class="fas fa-check-circle text-slate-800 mr-[1.5cqw]"></i>2 AC Daikin</div>
-                        <div><i class="fas fa-check-circle text-slate-800 mr-[1.5cqw]"></i>Kitchen Set</div>
-                        <div><i class="fas fa-check-circle text-slate-800 mr-[1.5cqw]"></i>TV 40 Inch</div>
-                        <div><i class="fas fa-check-circle text-slate-800 mr-[1.5cqw]"></i>1 Lemari</div>
-                        <div><i class="fas fa-check-circle text-slate-800 mr-[1.5cqw]"></i>Kompor Gas</div>
-                        <div><i class="fas fa-check-circle text-slate-800 mr-[1.5cqw]"></i>Cooker Hood</div>
+                <div class="mb-[2cqw]">
+                    <h3 class="f-subtitle border-b-2 border-slate-100 pb-[1cqw] mb-[1.5cqw]">Fasilitas Termasuk</h3>
+                    <div class="grid grid-cols-2 gap-y-[1.5cqw] gap-x-[1cqw] f-body font-medium">
+                        <div><i class="fas fa-check-circle text-slate-800 mr-[1cqw]"></i>2 AC Daikin</div>
+                        <div><i class="fas fa-check-circle text-slate-800 mr-[1cqw]"></i>Kitchen Set</div>
+                        <div><i class="fas fa-check-circle text-slate-800 mr-[1cqw]"></i>TV 40 Inch</div>
+                        <div><i class="fas fa-check-circle text-slate-800 mr-[1cqw]"></i>1 Lemari</div>
+                        <div><i class="fas fa-check-circle text-slate-800 mr-[1cqw]"></i>Kompor Gas</div>
+                        <div><i class="fas fa-check-circle text-slate-800 mr-[1cqw]"></i>Cooker Hood</div>
                     </div>
                 </div>
 
                 <!-- Fasilitas Komplek -->
-                <div class="bg-slate-50 p-[3cqw] rounded-lg border border-slate-200 mb-[2cqw]">
+                <div class="bg-slate-50 p-[2.5cqw] rounded-lg border border-slate-200">
                     <h3 class="f-subtitle mb-[1cqw]"><i class="fas fa-star text-slate-800 mr-[1cqw]"></i>Fasilitas Premium Komplek</h3>
-                    <p class="f-small leading-relaxed text-slate-600">
+                    <p class="f-small leading-tight text-slate-600">
                         Mesjid, Kolam Renang, Lap. Tenis & Voli, Minimarket (Delivery Galon/Gas), TK, Cafe, ATM, Taman, Security 24 Jam & Asri.
                     </p>
                 </div>
             </div>
 
-            <!-- Footer / CTA -->
-            <div class="h-[15%] bg-[#1e293b] text-white px-[5cqw] py-[3cqw] flex justify-between items-center rounded-b-2xl">
-                <div>
-                    <p class="f-small text-slate-300 mb-[0.5cqw]">Hubungi Ibu Rahmi:</p>
-                    <p class="f-subtitle text-white mb-[1.5cqw]"><i class="fab fa-whatsapp text-[#25D366] mr-[1cqw]"></i>0852-6290-4213</p>
-                    <div class="bg-white/10 border border-white/20 inline-block px-[2cqw] py-[0.5cqw] rounded f-small">
+            <!-- Footer / CTA: Fixed 12% Height -->
+            <div class="h-[12%] w-full bg-[#1e293b] text-white px-[4.5cqw] py-[2cqw] flex justify-between items-center rounded-b-2xl">
+                <div class="flex flex-col justify-center">
+                    <p class="f-small text-slate-300 mb-[0.2cqw]">Hubungi Ibu Rahmi:</p>
+                    <p class="f-subtitle text-white text-[4cqw] mb-[1cqw]"><i class="fab fa-whatsapp text-[#25D366] mr-[1cqw]"></i>0852-6290-4213</p>
+                    <div class="bg-white/10 border border-white/20 inline-block px-[1.5cqw] py-[0.5cqw] rounded f-small w-max">
                         <i class="fas fa-globe mr-[1cqw]"></i>menteng.posnew.com
                     </div>
                 </div>
-                <!-- QR WhatsApp (Jauh dari QR Lokasi) -->
-                <div class="qr-box">
+                <!-- QR WhatsApp -->
+                <div class="qr-box w-[12cqw]">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6285262904213" class="qr-img">
                     <span class="f-tiny font-bold text-slate-800 mt-[0.5cqw]">Scan WA</span>
                 </div>
@@ -146,76 +146,80 @@
          Sempurna untuk Feed Instagram / Facebook
     =========================================== -->
     <div class="w-full">
-        <h2 class="text-center font-bold text-slate-400 mb-2 tracking-widest uppercase">2. Orientasi Vertikal (Rasio 4:5)</h2>
+        <h2 class="text-center font-bold text-slate-400 mb-2 tracking-widest uppercase text-sm">2. Orientasi Vertikal (Rasio 4:5)</h2>
         
         <div class="flyer-container flyer-portrait rounded-xl flex flex-col">
-            <!-- Header Image -->
+            <!-- Header Image: Fixed 35% Height -->
             <div class="h-[35%] w-full relative">
                 <img src="tampak-depan.jpg" alt="Menteng Indah" class="w-full h-full object-cover">
                 <div class="absolute top-0 left-0 badge-muslim">KHUSUS MUSLIM</div>
             </div>
 
-            <!-- Main Content -->
-            <div class="flex-1 p-[4cqw] flex flex-col justify-between bg-white">
+            <!-- Main Content: Fixed 53% Height -->
+            <div class="h-[53%] w-full p-[3.5cqw] flex flex-col justify-between bg-white">
                 
                 <div class="flex justify-between items-start">
-                    <div class="w-[70%]">
+                    <div class="w-[75%]">
                         <h1 class="f-title text-[5.5cqw]">Rumah Minimalis Menteng Indah</h1>
-                        <p class="f-body mt-[0.5cqw]"><i class="fas fa-map-marker-alt text-red-500 mr-[1cqw]"></i>Medan Denai (Blok F2 No 29)</p>
+                        <p class="f-body mt-[0.5cqw] font-semibold"><i class="fas fa-map-marker-alt text-red-500 mr-[1cqw]"></i>Medan Denai (Blok F2 No 29)</p>
                         <div class="f-price mt-[1cqw] text-[6.5cqw]">Rp 35 Juta <span class="f-small font-normal">/ Thn</span></div>
                     </div>
                     <!-- QR Lokasi -->
-                    <div class="qr-box border border-slate-200">
+                    <div class="qr-box border border-slate-200 w-[15cqw]">
                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/RVRCegt28uvAQkQq8" class="qr-img">
                         <span class="f-tiny font-bold text-slate-800 mt-[0.5cqw]">Lokasi</span>
                     </div>
                 </div>
 
                 <!-- Specs & Features Row -->
-                <div class="flex gap-[3cqw] mt-[2cqw]">
+                <div class="flex gap-[3cqw] mt-[1cqw]">
                     <!-- Left: Specs -->
-                    <div class="w-[45%] flex flex-col gap-[1.5cqw]">
-                        <div class="bg-slate-50 p-[2cqw] rounded border border-slate-200 flex items-center gap-[2cqw]">
+                    <div class="w-[45%] flex flex-col justify-between gap-[1cqw]">
+                        <div class="bg-slate-50 p-[1.5cqw] rounded border border-slate-200 flex items-center gap-[1.5cqw]">
                             <i class="fas fa-vector-square f-icon"></i>
                             <div><div class="f-tiny">Luas Tanah</div><div class="f-body font-bold">150 m²</div></div>
                         </div>
-                        <div class="bg-slate-50 p-[2cqw] rounded border border-slate-200 flex items-center gap-[2cqw]">
+                        <div class="bg-slate-50 p-[1.5cqw] rounded border border-slate-200 flex items-center gap-[1.5cqw]">
                             <i class="fas fa-bed f-icon"></i>
                             <div><div class="f-tiny">Kamar Tidur</div><div class="f-body font-bold">3 Ruang</div></div>
                         </div>
-                        <div class="bg-slate-50 p-[2cqw] rounded border border-slate-200 flex items-center gap-[2cqw]">
+                        <div class="bg-slate-50 p-[1.5cqw] rounded border border-slate-200 flex items-center gap-[1.5cqw]">
                             <i class="fas fa-bath f-icon"></i>
                             <div><div class="f-tiny">K. Mandi</div><div class="f-body font-bold">2 Ruang</div></div>
                         </div>
                     </div>
 
                     <!-- Right: Features -->
-                    <div class="w-[55%]">
-                        <h3 class="f-subtitle mb-[1cqw] text-[3cqw]">Fasilitas Termasuk:</h3>
-                        <ul class="f-small space-y-[0.8cqw] text-slate-600 mb-[2cqw]">
-                            <li><i class="fas fa-check text-slate-800 mr-[1cqw]"></i>2 AC Daikin & TV 40"</li>
-                            <li><i class="fas fa-check text-slate-800 mr-[1cqw]"></i>Kitchen Set & Kompor</li>
-                            <li><i class="fas fa-check text-slate-800 mr-[1cqw]"></i>Lemari & Gorden</li>
-                        </ul>
+                    <div class="w-[55%] flex flex-col justify-between">
+                        <div>
+                            <h3 class="f-subtitle mb-[1cqw] text-[2.5cqw] border-b border-slate-100 pb-[0.5cqw]">Fasilitas Termasuk:</h3>
+                            <ul class="f-small space-y-[0.5cqw] text-slate-600 leading-tight">
+                                <li><i class="fas fa-check text-slate-800 mr-[1cqw]"></i>2 AC Daikin & TV 40"</li>
+                                <li><i class="fas fa-check text-slate-800 mr-[1cqw]"></i>Kitchen Set & Kompor</li>
+                                <li><i class="fas fa-check text-slate-800 mr-[1cqw]"></i>Lemari & Gorden</li>
+                            </ul>
+                        </div>
                         
-                        <h3 class="f-subtitle mb-[1cqw] text-[3cqw]">Komplek:</h3>
-                        <p class="f-tiny text-slate-500 leading-tight">Mesjid, Kolam Renang, ATM, Cafe, Lap. Tenis, Minimarket, Security 24 Jam.</p>
+                        <div class="mt-[1cqw]">
+                            <h3 class="f-subtitle mb-[0.5cqw] text-[2.5cqw] border-b border-slate-100 pb-[0.5cqw]">Komplek:</h3>
+                            <p class="f-tiny text-slate-500 leading-tight">Mesjid, Kolam Renang, ATM, Cafe, Lap. Tenis, Minimarket, Security 24 Jam.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Footer -->
-            <div class="h-[14%] bg-[#1e293b] text-white px-[4cqw] flex justify-between items-center rounded-b-xl">
-                <div class="flex items-center gap-[3cqw]">
-                    <div class="qr-box p-[1cqw]">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6285262904213" class="w-[8cqw] h-[8cqw] object-contain">
+            <!-- Footer: Fixed 12% Height -->
+            <div class="h-[12%] w-full bg-[#1e293b] text-white px-[4cqw] flex justify-between items-center rounded-b-xl">
+                <div class="flex items-center gap-[2.5cqw]">
+                    <div class="qr-box p-[0.8cqw] w-[9cqw]">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6285262904213" class="qr-img">
                     </div>
-                    <div>
+                    <div class="flex flex-col justify-center">
                         <p class="f-small text-slate-300 mb-[0.2cqw]">Hubungi Ibu Rahmi</p>
-                        <p class="f-subtitle text-[4cqw]"><i class="fab fa-whatsapp text-[#25D366] mr-[1cqw]"></i>0852-6290-4213</p>
+                        <p class="f-subtitle text-[3.5cqw] leading-none"><i class="fab fa-whatsapp text-[#25D366] mr-[1cqw]"></i>0852-6290-4213</p>
                     </div>
                 </div>
-                <div class="f-small text-right font-semibold text-slate-300 tracking-wide">
+                <div class="f-small text-right font-semibold text-slate-300 tracking-wider">
                     menteng.posnew.com
                 </div>
             </div>
@@ -227,72 +231,70 @@
          Sempurna untuk Postingan Kotak
     =========================================== -->
     <div class="w-full">
-        <h2 class="text-center font-bold text-slate-400 mb-2 tracking-widest uppercase">3. Orientasi Persegi (Rasio 1:1)</h2>
+        <h2 class="text-center font-bold text-slate-400 mb-2 tracking-widest uppercase text-sm">3. Orientasi Persegi (Rasio 1:1)</h2>
         
         <div class="flyer-container flyer-square rounded-lg flex flex-col">
-            <!-- Header Image -->
-            <div class="h-[45%] w-full relative">
+            <!-- Header Image: Fixed 42% Height -->
+            <div class="h-[42%] w-full relative">
                 <img src="tampak-depan.jpg" alt="Menteng Indah" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#1e293b]/90 to-transparent"></div>
                 
                 <div class="absolute top-0 left-0 badge-muslim">KHUSUS MUSLIM</div>
                 
-                <!-- QR Lokasi Overlay di gambar -->
-                <div class="absolute top-[3cqw] right-[3cqw] qr-box bg-white/90 p-[1cqw]">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/RVRCegt28uvAQkQq8" class="w-[10cqw] h-[10cqw]">
-                    <span class="f-tiny font-bold text-slate-800 mt-[0.5cqw] text-[1.2cqw]">Lokasi</span>
+                <!-- QR Lokasi Overlay -->
+                <div class="absolute top-[2.5cqw] right-[2.5cqw] qr-box bg-white/95 p-[1cqw] w-[12cqw]">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/RVRCegt28uvAQkQq8" class="qr-img">
+                    <span class="f-tiny font-bold text-slate-800 mt-[0.5cqw]">Lokasi</span>
                 </div>
 
-                <div class="absolute bottom-[2cqw] left-[4cqw] right-[4cqw]">
-                    <h1 class="f-title text-white text-[5.5cqw]">Menteng Indah Residence</h1>
-                    <p class="f-body text-slate-200 mt-[0.5cqw]"><i class="fas fa-map-marker-alt text-red-400 mr-[1cqw]"></i>Blok F2 No 29, Medan Denai</p>
+                <div class="absolute bottom-[2cqw] left-[3.5cqw] right-[3.5cqw]">
+                    <h1 class="f-title text-white text-[5cqw]">Menteng Indah Residence</h1>
+                    <p class="f-body text-slate-200 mt-[0.5cqw] font-medium"><i class="fas fa-map-marker-alt text-red-400 mr-[1cqw]"></i>Blok F2 No 29, Medan Denai</p>
                 </div>
             </div>
 
-            <!-- Main Content -->
-            <div class="flex-1 flex flex-col bg-white">
-                <div class="flex flex-1 p-[4cqw] gap-[3cqw]">
-                    <!-- Kiri: Harga & Spek -->
-                    <div class="w-[50%] flex flex-col justify-between border-r border-slate-200 pr-[3cqw]">
-                        <div>
-                            <p class="f-small text-slate-500 uppercase tracking-widest">Harga Sewa</p>
-                            <div class="f-price text-[6cqw] leading-tight">Rp 35 Juta<br><span class="f-small font-normal text-slate-500">/ Tahun</span></div>
-                        </div>
-                        
-                        <div class="grid grid-cols-2 gap-[1.5cqw] mt-[2cqw]">
-                            <div class="bg-slate-50 p-[1.5cqw] rounded text-center"><div class="f-tiny text-slate-500">L.Tanah</div><div class="f-body font-bold text-slate-800">150m²</div></div>
-                            <div class="bg-slate-50 p-[1.5cqw] rounded text-center"><div class="f-tiny text-slate-500">L.Bangun</div><div class="f-body font-bold text-slate-800">110m²</div></div>
-                            <div class="bg-slate-50 p-[1.5cqw] rounded text-center"><div class="f-tiny text-slate-500">Kamar</div><div class="f-body font-bold text-slate-800">3 KT</div></div>
-                            <div class="bg-slate-50 p-[1.5cqw] rounded text-center"><div class="f-tiny text-slate-500">Toilet</div><div class="f-body font-bold text-slate-800">2 KM</div></div>
-                        </div>
+            <!-- Main Content: Fixed 44% Height -->
+            <div class="h-[44%] w-full bg-white p-[3.5cqw] flex gap-[3cqw]">
+                <!-- Kiri: Harga & Spek -->
+                <div class="w-[50%] flex flex-col justify-between border-r border-slate-200 pr-[3cqw]">
+                    <div>
+                        <p class="f-small text-slate-500 uppercase tracking-widest mb-[0.5cqw]">Harga Sewa</p>
+                        <div class="f-price text-[5.5cqw] leading-none">Rp 35 Juta<br><span class="f-small font-normal text-slate-500 mt-[0.5cqw] block">/ Tahun</span></div>
                     </div>
-
-                    <!-- Kanan: Fasilitas -->
-                    <div class="w-[50%] flex flex-col justify-between">
-                        <div>
-                            <h3 class="f-subtitle text-[2.8cqw] border-b border-slate-100 pb-[1cqw] mb-[1cqw]">Fasilitas Termasuk</h3>
-                            <p class="f-tiny text-slate-600 leading-snug">2 AC Daikin, Kitchen Set, Cooker Hood, Gorden, 1 Lemari, Kompor Gas, TV 40".</p>
-                        </div>
-                        <div>
-                            <h3 class="f-subtitle text-[2.8cqw] border-b border-slate-100 pb-[1cqw] mb-[1cqw]">Fasilitas Komplek</h3>
-                            <p class="f-tiny text-slate-600 leading-snug">Mesjid, Kolam Renang, ATM, Lap. Tenis & Voli, Minimarket, TK, Cafe, Security 24 Jam.</p>
-                        </div>
+                    
+                    <div class="grid grid-cols-2 gap-[1cqw]">
+                        <div class="bg-slate-50 p-[1.2cqw] rounded border border-slate-100 text-center"><div class="f-tiny text-slate-500">L.Tanah</div><div class="f-body font-bold text-slate-800">150m²</div></div>
+                        <div class="bg-slate-50 p-[1.2cqw] rounded border border-slate-100 text-center"><div class="f-tiny text-slate-500">L.Bangun</div><div class="f-body font-bold text-slate-800">110m²</div></div>
+                        <div class="bg-slate-50 p-[1.2cqw] rounded border border-slate-100 text-center"><div class="f-tiny text-slate-500">Kamar</div><div class="f-body font-bold text-slate-800">3 KT</div></div>
+                        <div class="bg-slate-50 p-[1.2cqw] rounded border border-slate-100 text-center"><div class="f-tiny text-slate-500">Toilet</div><div class="f-body font-bold text-slate-800">2 KM</div></div>
                     </div>
                 </div>
 
-                <!-- Footer Bottom -->
-                <div class="bg-[#1e293b] text-white px-[4cqw] py-[2cqw] flex justify-between items-center rounded-b-lg">
-                    <div class="flex items-center gap-[3cqw]">
-                        <p class="f-small font-bold tracking-widest">menteng.posnew.com</p>
+                <!-- Kanan: Fasilitas -->
+                <div class="w-[50%] flex flex-col justify-between">
+                    <div>
+                        <h3 class="f-subtitle text-[2.5cqw] border-b border-slate-100 pb-[0.5cqw] mb-[1cqw]">Fasilitas Termasuk</h3>
+                        <p class="f-small text-slate-600 leading-tight">2 AC Daikin, Kitchen Set, Cooker Hood, Gorden, 1 Lemari, Kompor Gas, TV 40".</p>
                     </div>
-                    <div class="flex items-center gap-[2cqw]">
-                        <div class="text-right">
-                            <p class="f-tiny text-slate-300">Hubungi Ibu Rahmi</p>
-                            <p class="f-subtitle text-[3.5cqw]"><i class="fab fa-whatsapp text-[#25D366] mr-[1cqw]"></i>0852-6290-4213</p>
-                        </div>
-                        <div class="bg-white p-[0.8cqw] rounded shadow">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://wa.me/6285262904213" class="w-[6cqw] h-[6cqw] object-contain">
-                        </div>
+                    <div>
+                        <h3 class="f-subtitle text-[2.5cqw] border-b border-slate-100 pb-[0.5cqw] mb-[1cqw]">Fasilitas Komplek</h3>
+                        <p class="f-small text-slate-600 leading-tight">Mesjid, Kolam Renang, ATM, Lap. Tenis & Voli, Minimarket, TK, Cafe, Security 24 Jam.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom: Fixed 14% Height -->
+            <div class="h-[14%] w-full bg-[#1e293b] text-white px-[3.5cqw] flex justify-between items-center rounded-b-lg">
+                <div class="f-small font-bold tracking-widest text-slate-200">
+                    menteng.posnew.com
+                </div>
+                <div class="flex items-center gap-[2cqw]">
+                    <div class="text-right flex flex-col justify-center">
+                        <p class="f-tiny text-slate-300 mb-[0.2cqw]">Hubungi Ibu Rahmi</p>
+                        <p class="f-subtitle text-[3.2cqw] leading-none"><i class="fab fa-whatsapp text-[#25D366] mr-[0.5cqw]"></i>0852-6290-4213</p>
+                    </div>
+                    <div class="qr-box p-[0.8cqw] w-[9cqw]">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://wa.me/6285262904213" class="qr-img">
                     </div>
                 </div>
             </div>
