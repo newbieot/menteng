@@ -44,13 +44,26 @@
         /* Kotak QR Code */
         .qr-box { background: white; padding: 0.5cqw; border-radius: 1cqw; display: flex; flex-direction: column; align-items: center; justify-content: center; aspect-ratio: 1/1; border: 1px solid #e2e8f0;}
         .qr-img { width: 100%; height: 100%; object-fit: contain; }
+
+        /* GAYA BARU UNTUK BADGE SIAP HUNI */
+        .badge-ready { 
+            background: #16a34a; 
+            color: white; 
+            padding: 0.5cqw 1.5cqw; 
+            border-radius: 0.5cqw; 
+            font-size: 1.8cqw; 
+            font-weight: 700; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 0.5cqw; 
+        }
     </style>
 </head>
 <body class="py-10 px-4 flex flex-col items-center gap-16">
 
     <div class="text-center mb-4">
         <h1 class="text-3xl font-bold text-slate-800">Preview Flyer Digital Final</h1>
-        <p class="text-slate-500">Semua gambar masuk, Font WA Putih, dan Anti-Terpotong.</p>
+        <p class="text-slate-500">Semua gambar masuk, Font WA Putih, Anti-Terpotong, dan Penambahan Keterangan Siap Huni.</p>
     </div>
 
     <!-- ==========================================
@@ -67,7 +80,6 @@
             </div>
 
             <!-- Mini Gallery (Filmstrip 8 Kolom): 15% -->
-            <!-- Memuat 7 Foto Vertikal + 1 QR Lokasi -->
             <div class="h-[15%] w-full grid grid-cols-8 gap-[0.5cqw] p-[0.5cqw] bg-slate-100">
                 <img src="dalam-rumah.jpg" class="w-full h-full object-cover rounded-[0.5cqw]">
                 <img src="dalam-rumah-2.jpg" class="w-full h-full object-cover rounded-[0.5cqw]">
@@ -76,7 +88,6 @@
                 <img src="kamar-kedua.jpg" class="w-full h-full object-cover rounded-[0.5cqw]">
                 <img src="dapur.jpg" class="w-full h-full object-cover rounded-[0.5cqw]">
                 <img src="kamar-mandi.jpg" class="w-full h-full object-cover rounded-[0.5cqw]">
-                <!-- QR Lokasi terpisah di galeri -->
                 <div class="qr-box shadow-sm">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/RVRCegt28uvAQkQq8" class="w-[80%] h-[80%] object-contain">
                     <span class="f-tiny font-bold text-slate-700 mt-[0.2cqw] leading-none uppercase">Lokasi</span>
@@ -88,7 +99,13 @@
                 <div>
                     <h1 class="f-title text-[6cqw]">Rumah Minimalis<br>Menteng Indah</h1>
                     <p class="f-body mt-[1cqw] font-semibold"><i class="fas fa-map-marker-alt text-red-500 mr-[1cqw]"></i>Blok F2 No 29, Medan Denai</p>
+                    
                     <div class="f-price mt-[1.5cqw]">Rp 35 Juta <span class="f-body font-normal">/ Tahun</span></div>
+                    
+                    <!-- KETERANGAN SIAP HUNI -->
+                    <div class="mt-[1cqw]">
+                        <div class="badge-ready"><i class="fas fa-calendar-check"></i> Siap Huni 06 Juli 2026</div>
+                    </div>
                 </div>
 
                 <div class="flex gap-[1cqw] my-[1.5cqw]">
@@ -126,17 +143,15 @@
                 </div>
             </div>
 
-            <!-- Footer / CTA: 12% (QR WA) -->
+            <!-- Footer / CTA: 12% -->
             <div class="h-[12%] w-full bg-[#1e293b] px-[4cqw] py-[2cqw] flex justify-between items-center rounded-b-2xl">
                 <div class="flex flex-col justify-center">
                     <p class="f-small text-slate-300 mb-[0.2cqw]">Hubungi Ibu Rahmi:</p>
-                    <!-- WARNA FONT WA DIPAKSA PUTIH -->
                     <p class="font-bold text-white text-[4.5cqw] leading-none mb-[1cqw]"><i class="fab fa-whatsapp text-[#25D366] mr-[1cqw]"></i>0852-6290-4213</p>
                     <div class="bg-white/10 border border-white/20 inline-block px-[1.5cqw] py-[0.5cqw] rounded f-small w-max text-white">
                         menteng.posnew.com
                     </div>
                 </div>
-                <!-- QR WhatsApp -->
                 <div class="qr-box shadow-none w-[12cqw]">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6285262904213" class="qr-img">
                     <span class="f-tiny font-bold text-slate-800 mt-[0.5cqw]">Scan WA</span>
@@ -179,7 +194,12 @@
                     <div class="w-[100%]">
                         <h1 class="f-title text-[5.5cqw]">Rumah Minimalis Menteng Indah</h1>
                         <p class="f-body mt-[0.5cqw] font-semibold"><i class="fas fa-map-marker-alt text-red-500 mr-[1cqw]"></i>Medan Denai (Blok F2 No 29)</p>
-                        <div class="f-price mt-[1cqw] text-[6.5cqw]">Rp 35 Juta <span class="f-small font-normal">/ Thn</span></div>
+                        
+                        <!-- KETERANGAN SIAP HUNI -->
+                        <div class="flex items-center gap-[2cqw] mt-[1cqw]">
+                            <div class="f-price text-[6.5cqw]">Rp 35 Juta <span class="f-small font-normal">/ Thn</span></div>
+                            <div class="badge-ready"><i class="fas fa-calendar-check"></i> Siap Huni 06 Juli 2026</div>
+                        </div>
                     </div>
                 </div>
 
@@ -224,7 +244,6 @@
                     </div>
                     <div class="flex flex-col justify-center">
                         <p class="f-small text-slate-300 mb-[0.2cqw]">Hubungi Ibu Rahmi</p>
-                        <!-- WARNA FONT WA DIPAKSA PUTIH -->
                         <p class="font-bold text-white text-[3.8cqw] leading-none"><i class="fab fa-whatsapp text-[#25D366] mr-[1cqw]"></i>0852-6290-4213</p>
                     </div>
                 </div>
@@ -255,7 +274,7 @@
                     </div>
                 </div>
                 
-                <!-- Kanan: Grid Mini Gallery 4x2 + QR Lokasi (Membentuk Rasio Sempurna 9:16 untuk foto Vertikal) -->
+                <!-- Kanan: Grid Mini Gallery 4x2 + QR Lokasi -->
                 <div class="w-[50%] h-full grid grid-cols-4 grid-rows-2 gap-[0.5cqw] bg-white p-[0.5cqw]">
                     <img src="dalam-rumah.jpg" class="w-full h-full object-cover rounded-sm">
                     <img src="dalam-rumah-2.jpg" class="w-full h-full object-cover rounded-sm">
@@ -277,6 +296,11 @@
                     <div>
                         <p class="f-small text-slate-500 uppercase tracking-widest mb-[0.5cqw]">Harga Sewa</p>
                         <div class="f-price text-[5.5cqw] leading-none">Rp 35 Juta<br><span class="f-small font-normal text-slate-500 mt-[0.5cqw] block">/ Tahun</span></div>
+                        
+                        <!-- KETERANGAN SIAP HUNI -->
+                        <div class="mt-[1cqw]">
+                            <div class="badge-ready"><i class="fas fa-calendar-check"></i> Siap Huni 06 Juli 2026</div>
+                        </div>
                     </div>
                     
                     <div class="grid grid-cols-2 gap-[1cqw]">
@@ -307,7 +331,6 @@
                 <div class="flex items-center gap-[2cqw]">
                     <div class="text-right flex flex-col justify-center">
                         <p class="f-tiny text-slate-300 mb-[0.2cqw]">Hubungi Ibu Rahmi</p>
-                        <!-- WARNA FONT WA DIPAKSA PUTIH -->
                         <p class="font-bold text-white text-[3.5cqw] leading-none"><i class="fab fa-whatsapp text-[#25D366] mr-[0.5cqw]"></i>0852-6290-4213</p>
                     </div>
                     <div class="qr-box p-[0.8cqw] w-[9cqw] shadow-none border-none">
