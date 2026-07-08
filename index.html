@@ -56,7 +56,7 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     
     <style>
         body { 
@@ -159,12 +159,13 @@
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8">
             <div>
                 <!-- Label Khusus Muslim dan Siap Huni -->
-                <div class="flex flex-wrap gap-2 mb-3">
-                    <div class="inline-block border border-slate-300 text-slate-600 text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">
+                <div class="flex flex-wrap gap-3 mb-4">
+                    <!-- KHUSUS MUSLIM DIPERBESAR & LEBIH TEBAL -->
+                    <div class="inline-block bg-slate-800 text-white border border-slate-900 text-base md:text-lg font-black px-4 py-1.5 rounded uppercase tracking-widest shadow-md">
                         Khusus Muslim
                     </div>
-                    <div class="inline-block bg-yellow-100 text-yellow-800 border border-yellow-200 text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">
-                        <i class="fas fa-clock mr-1"></i> Siap Huni 28 Juni 2026
+                    <div class="inline-flex items-center bg-yellow-100 text-yellow-800 border border-yellow-200 text-sm font-bold px-4 py-1.5 rounded uppercase tracking-wider">
+                        <i class="fas fa-clock mr-2"></i> Siap Huni 06 Juli 2026
                     </div>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Hunian Minimalis & Strategis</h2>
@@ -262,14 +263,13 @@
                 
                 <div class="bg-white p-6 shadow-sm border border-gray-200">
                     <h3 class="text-lg font-bold mb-4 text-slate-800 border-b border-gray-100 pb-2">Fasilitas Termasuk</h3>
-                    <ul class="space-y-3 text-slate-600 text-sm">
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> 2 Unit AC Inverter Daikin</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> Kitchen Set Lengkap</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> Penghisap Asap Dapur</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> Gorden Jendela</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> 1 Lemari</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> Kompor Gas</li>
-                        <li class="flex items-center"><i class="fas fa-check text-slate-800 mr-3 w-4 text-center"></i> TV 40 Inch</li>
+                    <ul class="space-y-3 text-slate-600 text-sm font-medium">
+                        <li class="flex items-start"><i class="fas fa-check text-slate-800 mt-1 mr-3 w-4 text-center"></i> 2 (dua) unit AC Inverter ¾ PK merk Daikin</li>
+                        <li class="flex items-start"><i class="fas fa-check text-slate-800 mt-1 mr-3 w-4 text-center"></i> Perlengkapan Dapur (Alat Penghisap Asap & Kitchen Cabinets)</li>
+                        <li class="flex items-start"><i class="fas fa-check text-slate-800 mt-1 mr-3 w-4 text-center"></i> Kain Gorden</li>
+                        <li class="flex items-start"><i class="fas fa-check text-slate-800 mt-1 mr-3 w-4 text-center"></i> Kulkas 2 Pintu merk Panasonic</li>
+                        <li class="flex items-start"><i class="fas fa-check text-slate-800 mt-1 mr-3 w-4 text-center"></i> Kompor Gas merk Rinnai</li>
+                        <li class="flex items-start"><i class="fas fa-check text-slate-800 mt-1 mr-3 w-4 text-center"></i> TV 40 Inci merk Coocaa</li>
                     </ul>
                 </div>
 
@@ -316,8 +316,7 @@
 
                 <div class="bg-dark-grey p-6 shadow-md text-white text-center border-t-4 border-slate-500 sticky top-6">
                     <h3 class="text-xl font-bold mb-2">Tertarik Menyewa?</h3>
-                    <!-- Pesan Urgensi (FOMO) -->
-                    <p class="text-yellow-400 text-sm font-semibold mb-2"><i class="fas fa-clock mr-1"></i> Pesan sekarang untuk penempatan 28 Juni!</p>
+                    <p class="text-yellow-400 text-sm font-semibold mb-2"><i class="fas fa-clock mr-1"></i> Pesan sekarang, rumah siap huni!</p>
                     <p class="text-slate-300 text-xs mb-6">Hubungi Ibu Rahmi untuk survey lokasi atau pertanyaan lebih lanjut.</p>
                     
                     <a href="https://api.whatsapp.com/send?phone=6285262904213&text=Halo%20Ibu%20Rahmi,%20saya%20melihat%20iklan%20website%20untuk%20sewa%20rumah%20di%20Menteng%20Indah.%20Apakah%20masih%20tersedia?" target="_blank" rel="noopener noreferrer" class="inline-block w-full bg-[#25D366] text-white font-bold py-3 px-4 rounded-sm hover:bg-[#1ebd5a] transition duration-300 shadow-sm">
@@ -343,15 +342,12 @@
     </footer>
 
     <div id="imageModal" class="fixed inset-0 z-[100] bg-black/90 hidden justify-center items-center backdrop-blur-sm" onclick="closeModal()">
-        
         <button class="absolute top-4 right-4 md:top-6 md:right-8 text-white/70 hover:text-white focus:outline-none z-[110] transition-colors" onclick="closeModal()">
             <i class="fas fa-times text-3xl md:text-5xl"></i>
         </button>
-
         <div class="relative max-w-[95vw] max-h-[90vh] flex justify-center items-center">
             <img id="modalImage" src="" alt="Perbesar Gambar" class="modal-content-img rounded shadow-2xl bg-black" onclick="event.stopPropagation()">
         </div>
-        
         <p class="absolute bottom-6 text-white/50 text-sm font-light tracking-wide hidden md:block">Klik di mana saja atau tekan ESC untuk menutup</p>
     </div>
 
@@ -362,22 +358,13 @@
         function openModal(imageSrc) {
             modalImg.src = imageSrc;
             modal.classList.remove('hidden');
-            
-            setTimeout(() => {
-                modal.classList.add('modal-active');
-            }, 10);
-            
+            setTimeout(() => { modal.classList.add('modal-active'); }, 10);
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             modal.classList.remove('modal-active');
-            
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modalImg.src = '';
-            }, 300);
-            
+            setTimeout(() => { modal.classList.add('hidden'); modalImg.src = ''; }, 300);
             document.body.style.overflow = 'auto';
         }
 
@@ -387,6 +374,5 @@
             }
         });
     </script>
-
 </body>
 </html>
