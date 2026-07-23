@@ -24,9 +24,9 @@
             border: 1px solid #e2e8f0;
         }
 
-        .flyer-square { aspect-ratio: 1 / 1; max-width: 500px; } /* 1080 x 1080 */
-        .flyer-portrait { aspect-ratio: 4 / 5; max-width: 450px; } /* 1080 x 1350 */
-        .flyer-story { aspect-ratio: 9 / 16; max-width: 400px; } /* 1080 x 1920 */
+        .flyer-square { aspect-ratio: 1 / 1; max-width: 500px; } 
+        .flyer-portrait { aspect-ratio: 4 / 5; max-width: 450px; } 
+        .flyer-story { aspect-ratio: 9 / 16; max-width: 400px; } 
 
         .f-title { font-size: 5.5cqw; font-weight: 800; line-height: 1.1; color: #1e293b; text-transform: uppercase; }
         .f-price { font-size: 6.5cqw; font-weight: 800; color: #0f172a; line-height: 1.1; }
@@ -37,7 +37,6 @@
 
         .f-icon { font-size: 3cqw; color: #1e293b; }
         
-        /* KHUSUS MUSLIM - DIPERBESAR DAN DIPERTEBAL */
         .badge-muslim { 
             background: #0f172a; 
             color: #ffffff; 
@@ -62,6 +61,7 @@
             display: inline-flex; 
             align-items: center; 
             gap: 0.5cqw; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -69,7 +69,7 @@
 
     <div class="text-center mb-4">
         <h1 class="text-3xl font-bold text-slate-800">Preview Flyer Digital Final</h1>
-        <p class="text-slate-500">Lemari Dihapus, Kulkas Ditambahkan, Tulisan KHUSUS MUSLIM Diperbesar.</p>
+        <p class="text-slate-500">Penambahan Kasur & Lemari, Hapus kata Minimalis, Highlight Nama Perumahan.</p>
     </div>
 
     <!-- ==========================================
@@ -80,7 +80,7 @@
         
         <div class="flyer-container flyer-story rounded-2xl flex flex-col">
             <div class="h-[25%] w-full relative">
-                <img src="tampak-depan.jpg" alt="Menteng Indah" class="w-full h-full object-cover">
+                <img src="tampak-depan.jpg" alt="Sewa Rumah Menteng Indah Medan" class="w-full h-full object-cover">
                 <div class="absolute top-0 left-0 badge-muslim">KHUSUS MUSLIM</div>
             </div>
 
@@ -100,24 +100,26 @@
 
             <div class="h-[48%] w-full p-[4cqw] flex flex-col justify-between bg-white">
                 <div>
-                    <h1 class="f-title text-[6cqw]">Rumah Minimalis<br>Menteng Indah</h1>
-                    <p class="f-body mt-[1cqw] font-semibold"><i class="fas fa-map-marker-alt text-red-500 mr-[1cqw]"></i>Blok F2 No 29, Medan Denai</p>
-                    <div class="f-price mt-[1.5cqw]">Rp 35 Juta <span class="f-body font-normal">/ Tahun</span></div>
-                    <div class="mt-[1cqw]">
-                        <div class="badge-ready"><i class="fas fa-calendar-check"></i> Siap Huni 06 Juli 2026</div>
+                    <!-- HEADLINE DITEGASKAN -->
+                    <h1 class="f-title text-[5.5cqw]">Sewa Rumah<br>Menteng Indah</h1>
+                    <p class="f-body mt-[1cqw] font-bold text-slate-800 bg-yellow-100 inline-block px-[1cqw] py-[0.2cqw] rounded"><i class="fas fa-map-marker-alt text-red-500 mr-[1cqw]"></i>Perumahan Menteng Indah Blok F2 No 29 Medan</p>
+                    
+                    <div class="flex items-center gap-[2cqw] mt-[1.5cqw]">
+                        <div class="f-price">Rp 35 Juta <span class="f-body font-normal text-slate-500">/ Thn</span></div>
+                        <div class="badge-ready"><i class="fas fa-check-circle"></i> Langsung Siap Huni</div>
                     </div>
                 </div>
 
                 <div class="flex gap-[1cqw] my-[1.5cqw]">
-                    <div class="flex-1 bg-slate-50 border border-slate-200 rounded text-center p-[1.5cqw]">
+                    <div class="flex-1 bg-slate-50 border border-slate-200 rounded text-center p-[1cqw]">
                         <div class="f-small">L. Tanah</div>
                         <div class="f-body font-bold text-slate-800">150m²</div>
                     </div>
-                    <div class="flex-1 bg-slate-50 border border-slate-200 rounded text-center p-[1.5cqw]">
+                    <div class="flex-1 bg-slate-50 border border-slate-200 rounded text-center p-[1cqw]">
                         <div class="f-small">Kamar</div>
                         <div class="f-body font-bold text-slate-800">3 KT</div>
                     </div>
-                    <div class="flex-1 bg-slate-50 border border-slate-200 rounded text-center p-[1.5cqw]">
+                    <div class="flex-1 bg-slate-50 border border-slate-200 rounded text-center p-[1cqw]">
                         <div class="f-small">Toilet</div>
                         <div class="f-body font-bold text-slate-800">2 KM</div>
                     </div>
@@ -125,14 +127,12 @@
 
                 <div class="mb-[1cqw]">
                     <h3 class="f-subtitle border-b border-slate-100 pb-[0.5cqw] mb-[1cqw]">Fasilitas Termasuk</h3>
-                    <!-- LIST FASILITAS DIPERBARUI -->
-                    <div class="grid grid-cols-2 gap-y-[1cqw] gap-x-[2cqw] f-body font-medium leading-tight">
-                        <div class="flex items-start"><i class="fas fa-check-circle text-slate-800 mr-[1cqw] mt-[0.3cqw]"></i>2 AC Daikin Inverter</div>
-                        <div class="flex items-start"><i class="fas fa-check-circle text-slate-800 mr-[1cqw] mt-[0.3cqw]"></i>Kitchen Set & Hood</div>
-                        <div class="flex items-start"><i class="fas fa-check-circle text-slate-800 mr-[1cqw] mt-[0.3cqw]"></i>Kain Gorden</div>
-                        <div class="flex items-start"><i class="fas fa-check-circle text-slate-800 mr-[1cqw] mt-[0.3cqw]"></i>Kulkas 2 Pintu Panasonic</div>
-                        <div class="flex items-start"><i class="fas fa-check-circle text-slate-800 mr-[1cqw] mt-[0.3cqw]"></i>Kompor Gas Rinnai</div>
-                        <div class="flex items-start"><i class="fas fa-check-circle text-slate-800 mr-[1cqw] mt-[0.3cqw]"></i>TV 40" Coocaa</div>
+                    <!-- FASILITAS BARU DITAMBAHKAN (Dikelompokkan agar rapi) -->
+                    <div class="grid grid-cols-2 gap-y-[1cqw] gap-x-[2cqw] f-body font-semibold text-slate-700 leading-tight">
+                        <div class="flex items-start"><i class="fas fa-check-circle text-green-600 mr-[1cqw] mt-[0.3cqw]"></i>2 AC Inverter & TV 40"</div>
+                        <div class="flex items-start"><i class="fas fa-check-circle text-green-600 mr-[1cqw] mt-[0.3cqw]"></i>Spring Bed & Lemari</div>
+                        <div class="flex items-start"><i class="fas fa-check-circle text-green-600 mr-[1cqw] mt-[0.3cqw]"></i>Kulkas 2 Pintu & Kompor</div>
+                        <div class="flex items-start"><i class="fas fa-check-circle text-green-600 mr-[1cqw] mt-[0.3cqw]"></i>Kitchen Set & Gorden</div>
                     </div>
                 </div>
 
@@ -168,7 +168,7 @@
         
         <div class="flyer-container flyer-portrait rounded-xl flex flex-col">
             <div class="h-[28%] w-full relative">
-                <img src="tampak-depan.jpg" alt="Menteng Indah" class="w-full h-full object-cover">
+                <img src="tampak-depan.jpg" alt="Sewa Rumah Menteng Indah Medan" class="w-full h-full object-cover">
                 <div class="absolute top-0 left-0 badge-muslim">KHUSUS MUSLIM</div>
             </div>
 
@@ -189,11 +189,12 @@
             <div class="h-[46%] w-full p-[3.5cqw] flex flex-col justify-between bg-white">
                 <div class="flex justify-between items-start">
                     <div class="w-[100%]">
-                        <h1 class="f-title text-[5.5cqw]">Rumah Minimalis Menteng Indah</h1>
-                        <p class="f-body mt-[0.5cqw] font-semibold"><i class="fas fa-map-marker-alt text-red-500 mr-[1cqw]"></i>Medan Denai (Blok F2 No 29)</p>
+                        <!-- HEADLINE DITEGASKAN -->
+                        <h1 class="f-title text-[5.5cqw]">Sewa Rumah Menteng Indah</h1>
+                        <p class="f-body mt-[0.5cqw] font-bold text-slate-800 bg-yellow-100 inline-block px-[1cqw] py-[0.2cqw] rounded"><i class="fas fa-map-marker-alt text-red-500 mr-[1cqw]"></i>Perumahan Menteng Indah Blok F2 No 29 Medan</p>
                         <div class="flex items-center gap-[2cqw] mt-[1cqw]">
                             <div class="f-price text-[6.5cqw]">Rp 35 Juta <span class="f-small font-normal">/ Thn</span></div>
-                            <div class="badge-ready"><i class="fas fa-calendar-check"></i> Siap Huni 06 Juli 2026</div>
+                            <div class="badge-ready"><i class="fas fa-check-circle"></i> Langsung Siap Huni</div>
                         </div>
                     </div>
                 </div>
@@ -217,11 +218,11 @@
                     <div class="w-[58%] flex flex-col justify-between">
                         <div>
                             <h3 class="f-subtitle text-[2.5cqw] border-b border-slate-100 pb-[0.5cqw] mb-[0.5cqw]">Fasilitas Termasuk:</h3>
-                            <!-- LIST FASILITAS DIPERBARUI -->
-                            <ul class="f-small space-y-[0.8cqw] text-slate-600 leading-tight mt-[0.5cqw]">
-                                <li class="flex"><i class="fas fa-check text-slate-800 mr-[1cqw] mt-[0.2cqw]"></i>2 AC Daikin Inverter & TV 40" Coocaa</li>
-                                <li class="flex"><i class="fas fa-check text-slate-800 mr-[1cqw] mt-[0.2cqw]"></i>Kitchen Cabinets, Hood & Kompor Rinnai</li>
-                                <li class="flex"><i class="fas fa-check text-slate-800 mr-[1cqw] mt-[0.2cqw]"></i>Kulkas 2 Pintu Panasonic & Kain Gorden</li>
+                            <!-- FASILITAS BARU -->
+                            <ul class="f-small space-y-[0.8cqw] text-slate-700 font-semibold leading-tight mt-[0.5cqw]">
+                                <li class="flex"><i class="fas fa-check-circle text-green-600 mr-[1cqw] mt-[0.2cqw]"></i>2 AC Daikin Inverter & TV 40" Coocaa</li>
+                                <li class="flex"><i class="fas fa-check-circle text-green-600 mr-[1cqw] mt-[0.2cqw]"></i>1 Spring Bed & 1 Lemari Pakaian</li>
+                                <li class="flex"><i class="fas fa-check-circle text-green-600 mr-[1cqw] mt-[0.2cqw]"></i>Kitchen Cabinets, Hood, Kulkas & Kompor</li>
                             </ul>
                         </div>
                         <div class="mt-[0.5cqw]">
@@ -258,12 +259,13 @@
         <div class="flyer-container flyer-square rounded-lg flex flex-col">
             <div class="h-[45%] w-full flex">
                 <div class="w-[50%] h-full relative border-r border-white">
-                    <img src="tampak-depan.jpg" alt="Menteng Indah" class="w-full h-full object-cover">
+                    <img src="tampak-depan.jpg" alt="Sewa Rumah Menteng Indah Medan" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#1e293b]/90 to-transparent"></div>
                     <div class="absolute top-0 left-0 badge-muslim">KHUSUS MUSLIM</div>
                     <div class="absolute bottom-[2cqw] left-[3cqw] right-[1cqw]">
-                        <h1 class="f-title text-white text-[4.5cqw]">Menteng Indah Residence</h1>
-                        <p class="f-body text-slate-200 mt-[0.5cqw] font-medium leading-tight"><i class="fas fa-map-marker-alt text-red-400 mr-[1cqw]"></i>Blok F2 No 29, Medan Denai</p>
+                        <!-- HEADLINE DITEGASKAN -->
+                        <h1 class="f-title text-white text-[4cqw]">Sewa Rumah<br>Menteng Indah</h1>
+                        <p class="f-body text-slate-200 mt-[0.5cqw] font-bold leading-tight bg-black/30 inline-block px-[1cqw] py-[0.5cqw] rounded"><i class="fas fa-map-marker-alt text-red-400 mr-[1cqw]"></i>Perumahan Menteng Indah Blok F2 No 29 Medan</p>
                     </div>
                 </div>
                 
@@ -288,7 +290,7 @@
                         <p class="f-small text-slate-500 uppercase tracking-widest mb-[0.5cqw]">Harga Sewa</p>
                         <div class="f-price text-[5.5cqw] leading-none">Rp 35 Juta<br><span class="f-small font-normal text-slate-500 mt-[0.5cqw] block">/ Tahun</span></div>
                         <div class="mt-[1cqw]">
-                            <div class="badge-ready"><i class="fas fa-calendar-check"></i> Siap Huni 06 Juli 2026</div>
+                            <div class="badge-ready"><i class="fas fa-check-circle"></i> Langsung Siap Huni</div>
                         </div>
                     </div>
                     
@@ -303,8 +305,8 @@
                 <div class="w-[50%] flex flex-col justify-between">
                     <div>
                         <h3 class="f-subtitle text-[2.5cqw] border-b border-slate-100 pb-[0.5cqw] mb-[0.5cqw]">Fasilitas Termasuk</h3>
-                        <!-- LIST FASILITAS DIPERBARUI -->
-                        <p class="f-small text-slate-600 leading-tight mt-[1cqw]">2 AC Inverter Daikin, Kitchen Set & Penghisap Asap, Kain Gorden, Kulkas 2 Pintu Panasonic, Kompor Gas Rinnai, TV 40" Coocaa.</p>
+                        <!-- FASILITAS BARU DITAMBAHKAN -->
+                        <p class="f-small text-slate-700 font-semibold leading-tight mt-[1cqw]">2 AC Daikin Inverter, Spring Bed, Lemari Pakaian, Kitchen Set & Cooker Hood, Kain Gorden, Kulkas 2 Pintu Panasonic, Kompor Gas Rinnai, TV 40" Coocaa.</p>
                     </div>
                     <div>
                         <h3 class="f-subtitle text-[2.5cqw] border-b border-slate-100 pb-[0.5cqw] mb-[0.5cqw]">Fasilitas Komplek</h3>
